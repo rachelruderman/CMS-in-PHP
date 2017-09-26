@@ -3,6 +3,15 @@
     <?php
       if(isset($_POST['submit'])){
         $search = $_POST['search'];
+        $query = "SELECT * FROM posts WHERE post_tag LIKE '%$search' ";
+        $searchQuery = mysqli_query($connection, $query);
+        if(!$searchQuery){
+          die("QUERY FAILED!" . mysqli_error($connection));
+        }
+        $count = mysqli_num_rows($searchQuery);
+        if($count == 0){
+          echo "<h1>No results</h1>";
+        }
       }
     ?>
 
