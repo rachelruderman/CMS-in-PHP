@@ -13,7 +13,6 @@
                             <small>Subheading</small>
                         </h1>
                         <div class="col-xs-6">
-
                           <form class="" action="index.html" method="post">
                             <div class="form-group">
                               <label for="cat_title">Category Title</label>
@@ -24,6 +23,22 @@
                             </div>
                           </form>
                       </div>
+                      <div class="col-xs-6">
+                        <table class='table table-border table-hover'>
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Category Title</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>PHP</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      <div>
                     </div>
                 </div>
                 <!-- /.row -->
