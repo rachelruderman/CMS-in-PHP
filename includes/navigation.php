@@ -23,6 +23,7 @@
                   //double quotes to include variables with html
                 }
                ?>
+               <li><a href="admin">Admin</a></li>
 
             </ul>
         </div>
