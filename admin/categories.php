@@ -1,5 +1,5 @@
 <?php include "includes/header.php" ?>
-
+<?php  ?>
     <div id="wrapper">
       <?php include "includes/navigation.php" ?>
         <div id="page-wrapper">
@@ -13,7 +13,22 @@
                             <small>Subheading</small>
                         </h1>
                         <div class="col-xs-6">
-                          <form class="" action="index.html" method="post">
+                        <?php
+                          if(isset($_POST['submit'])){
+                            $cat_title = $_POST['cat_title'];
+                            if($cat_title == '' || empty($cat_title)){
+                              echo "Required field";
+                            } else {
+                              $query = "INSERT INTO category(cat_title) ";
+                              $query .= "VALUE('{$cat_title}') ";
+                              $create_category = mysqli_query($connection, $query);
+                              if(!$create_category){
+                                die('Query Failed: ' . mysqli_error($connection));
+                              }
+                            }
+                          }
+                        ?>
+                          <form class="" action="categories.php" method="post">
                             <div class="form-group">
                               <label for="cat_title">Category Title</label>
                               <input class="form-control" type="text" name="cat_title">
